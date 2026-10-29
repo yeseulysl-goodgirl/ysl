@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이예슬 포트폴리오</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Pretendard';font-weight:100;font-style:normal;font-display:swap;src:url(./assets/0830e15be55e1ff3f7084822fbee4a34.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:200;font-style:normal;font-display:swap;src:url(./assets/073531a970cf2de3e93568c7286fd2ff.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:300;font-style:normal;font-display:swap;src:url(./assets/ff4c9020a70673f131d83ec43eeb7d2a.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:400;font-style:normal;font-display:swap;src:url(./assets/7e0d16b4b3c891d9260f19511b6b17db.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:500;font-style:normal;font-display:swap;src:url(./assets/e9929727a67522487da729ebb3b0a8c4.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:600;font-style:normal;font-display:swap;src:url(./assets/6f2caa20ba250e7cdd1814fee051c508.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:700;font-style:normal;font-display:swap;src:url(./assets/b928a5206e60a35e644dd6e5b14608cb.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:800;font-style:normal;font-display:swap;src:url(./assets/1474eef5ac8869328d5964183fc57963.woff2) format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:900;font-style:normal;font-display:swap;src:url(./assets/dbbd6167af3cf25222b9dd6462dbbf95.woff2) format('woff2')}
+body{margin:0;background:#fff}
+
+/* ---------- base: 1 unit = 1px of the 2000 x 1125 PDF page ---------- */
+.site{--pink:#FD85E6;--vu:var(--vuw,1vw);--u:calc(var(--vu)*.05);--ink:#030303;--gray:#d8d8d8;position:relative;width:100%;color:var(--ink);font-family:'Pretendard',sans-serif;letter-spacing:-.03em;background:#fff}
+.site *{box-sizing:border-box}
+.reset{appearance:none;border:0;background:none;padding:0;margin:0;font:inherit;color:inherit;letter-spacing:inherit;text-align:inherit;cursor:pointer}
+.reset:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ko{font-family:'Pretendard',sans-serif;font-weight:700;letter-spacing:-.03em}
+.pink{color:var(--pink)}
+
+/* a 16:9 screen */
+.screen{position:relative;width:100%;height:calc(var(--u)*1125);overflow:hidden;background:#fff}
+.screen-pink{background:var(--pink)}
+
+/* header (BRIEF / 2026) */
+.hdr-wrap{position:sticky;top:0;height:0;z-index:10}
+.hdr-l,.hdr-r{position:absolute;top:calc(var(--u)*6);font-weight:700;font-size:calc(var(--u)*40);line-height:calc(var(--u)*48);letter-spacing:-.03em;white-space:nowrap}
+.hdr-l{left:calc(var(--u)*20)}
+.hdr-r{right:calc(var(--u)*22)}
+.hdr-static .hdr-l,.hdr-static .hdr-r{position:absolute}
+
+/* brackets: pure CSS */
+.row{position:absolute;top:calc(var(--u)*495);height:calc(var(--u)*155);display:block}
+.hit{display:block}
+.br{position:absolute;top:0;width:calc(var(--u)*27);height:calc(var(--u)*155)}
+.br-l{border-left:calc(var(--u)*10) solid var(--ink);border-radius:100% 0 0 100% / 50% 0 0 50%}
+.br-r{border-right:calc(var(--u)*10) solid var(--ink);border-radius:0 100% 100% 0 / 0 50% 50% 0}
+
+/* slots for supplied artwork */
+.slot{position:absolute;border:1px dashed var(--slot)}
+.slot-type{top:calc(var(--u)*10);height:calc(var(--u)*143)}
+.slot-img{top:0;height:calc(var(--u)*155);display:flex;align-items:center;justify-content:center}
+.slot-text{white-space:nowrap;line-height:1}
+.thumb{display:block;position:relative;overflow:hidden;width:100%;background:var(--gray);aspect-ratio:969/561}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+
+/* ---------- PAGE 1 / 2 ---------- */
+.p1-row{left:calc(var(--u)*228);width:calc(var(--u)*1525)}
+.p1-type{left:0;width:calc(var(--u)*297)}
+.p1-bl{left:calc(var(--u)*460)}
+.p1-br{left:calc(var(--u)*1500)}
+.p1-img{left:calc(var(--u)*495);width:calc(var(--u)*1003)}
+.p2-text{font-size:calc(var(--u)*88);color:var(--pink)}
+
+/* ---------- PAGE 1 / 2 artwork: 1920 x 1080 reference (1 unit = --w) ---------- */
+.in-hit{--w:calc(var(--vu)*.0520833);position:absolute;left:calc(var(--w)*219);top:calc(var(--w)*447);width:calc(var(--w)*1467);height:calc(var(--w)*205);display:block}
+.in-brief{position:absolute;left:0;top:0;width:calc(var(--w)*1467);height:calc(var(--w)*205);display:block}
+.in-obj{position:absolute;left:calc(var(--w)*476);top:calc(var(--w)*-301);width:calc(var(--w)*955);height:calc(var(--w)*806);display:block;pointer-events:none}
+.in-name{position:absolute;left:calc(var(--w)*476);width:calc(var(--w)*955);top:calc(var(--w)*76);text-align:center;font-size:calc(var(--w)*86)}
+
+/* ---------- PAGE 6-9, 11 artwork: 1920 x 1080 reference ---------- */
+.art-hit{--w:calc(var(--vu)*.0520833);position:absolute;left:calc(var(--w)*219);top:calc(var(--w)*447);width:calc(var(--w)*1467);height:calc(var(--w)*205);display:block}
+.art-hit-f{left:calc(var(--w)*248);width:calc(var(--w)*1445)}
+.art-img{position:absolute;display:block;pointer-events:none}
+.art-how{left:0;top:0;width:calc(var(--w)*1467);height:calc(var(--w)*205)}
+.art-who{left:0;top:0;width:calc(var(--w)*1469);height:calc(var(--w)*205)}
+.art-brk{left:calc(var(--w)*12);top:calc(var(--w)*17.5);width:calc(var(--w)*1443);height:calc(var(--w)*170)}
+.art-roll-how{left:calc(var(--w)*796);top:calc(var(--w)*-110.5);width:calc(var(--w)*568);height:calc(var(--w)*426)}
+.art-roll-who{left:calc(var(--w)*893.5);top:calc(var(--w)*-211.5);width:calc(var(--w)*528);height:calc(var(--w)*628)}
+.art-roll-who5{top:calc(var(--w)*-225.5)}
+.art-fin{left:0;top:0;width:calc(var(--w)*1445);height:calc(var(--w)*205)}
+.art-text{position:absolute;left:calc(var(--w)*40);top:calc(var(--w)*-7);width:calc(var(--w)*1387);height:calc(var(--w)*205);display:flex;align-items:center;justify-content:center}
+.art-text-f{width:calc(var(--w)*920)}
+/* final page: first click opens the right bracket (yes ! fades out), then the phrases cross-fade; text turns white from phrase 3 */
+.fin-lb{clip-path:inset(0 calc(var(--w)*956) 0 0)}
+.fin-rb{clip-path:inset(0 calc(var(--w)*339) 0 calc(var(--w)*489));transition:transform .5s ease}
+.fin-yes{clip-path:inset(0 0 0 calc(var(--w)*1106));transition:opacity .25s ease}
+.f-open .fin-rb{transform:translateX(calc(var(--w)*440))}
+.f-open .fin-yes{opacity:0}
+.f-open .art-text-f{opacity:0;transition:opacity .25s ease}
+.art-text-fo{display:grid;place-items:center;left:calc(var(--w)*42);width:calc(var(--w)*1360);pointer-events:none}
+.fph{grid-area:1/1;opacity:0;transition:opacity .4s ease}
+.fph.on{opacity:1}
+.fph.f-white{color:#FFFFFF}
+.f-done{cursor:default}
+
+/* fit: whole 2000x1125 page scaled uniformly to the window (never wider or taller than it), centered */
+.fit{--vu:min(var(--vuw,1vw),1.77778vh);--u:calc(var(--vu)*.05);--w:calc(var(--vu)*.0520833);width:calc(var(--u)*2000);margin:max(0px,calc((100vh - var(--u)*1125)/2)) auto}
+/* bracket opening: left bracket slides left, right bracket fixed, text fades in (pieces clipped from the closed artwork) */
+.art-lbr{transition:transform .5s ease}
+.art-hit.is-open .art-roll{display:none !important}
+.art-hit.is-open .art-lbl{visibility:hidden}
+.how-lbl{clip-path:inset(0 calc(var(--w)*826) 0 0)}
+.how-lbr{clip-path:inset(0 calc(var(--w)*387) 0 calc(var(--w)*641))}
+.how-rbr{clip-path:inset(0 0 0 calc(var(--w)*1080))}
+.is-open .how-lbr{transform:translateX(calc(var(--w)*-683))}
+.who-lbl{clip-path:inset(0 calc(var(--w)*676) 0 0)}
+.who-lbr{clip-path:inset(0 calc(var(--w)*312) 0 calc(var(--w)*793))}
+.who-rbr{clip-path:inset(0 0 0 calc(var(--w)*1157))}
+.is-open .who-lbr{transform:translateX(calc(var(--w)*-835))}
+.art-text-o{left:calc(var(--w)*45.75);opacity:0}
+.is-open .art-text-o{opacity:1;transition:opacity .5s ease}
+
+/* YES symbol (main header) */
+.yes-sym{position:absolute;left:50%;top:calc(var(--vu)*.4167);transform:translateX(-50%);display:block;pointer-events:none}
+
+/* ---------- PAGE 3 ---------- */
+.intro-logo{position:absolute;z-index:0;left:calc(var(--vu)*1.0156);top:calc(var(--vu)*4.6354);width:calc(var(--vu)*97.9688);height:auto;display:block;pointer-events:none}
+.intro{position:relative;height:calc(var(--u)*950)}
+.bio{position:absolute;z-index:1;left:calc(var(--u)*1010);top:calc(var(--u)*345);width:calc(var(--u)*968);font-size:calc(var(--u)*43);line-height:calc(var(--u)*53)}
+.bio div{white-space:nowrap;text-align:justify;text-align-last:justify}
+.bio div.last{text-align:left;text-align-last:left}
+.untyped{visibility:hidden}
+
+/* ---------- PAGE 4 ---------- */
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:calc(var(--u)*22);row-gap:calc(var(--u)*21);padding:0 calc(var(--u)*20) calc(var(--u)*20);align-items:start}
+.proj{display:block;width:100%}
+.proj-label{display:block;height:calc(var(--u)*53);padding:0 0 0 calc(var(--u)*2);font-weight:700;font-size:calc(var(--u)*40);line-height:calc(var(--u)*48);letter-spacing:-.03em;white-space:nowrap}
+
+/* ---------- PAGE 5 ---------- */
+.detail{height:calc(var(--u)*1125);overflow:hidden}
+.detail.fit{width:100%;margin:0}
+.d-right{position:absolute;top:0;right:calc(var(--u)*19.3);height:100%;pointer-events:none}
+/* project header = main header: same unit (never the fit scale), same offsets, always above the image column */
+.hdr-scope{--vu:var(--vuw,1vw);--u:calc(var(--vu)*.05);--w:calc(var(--vu)*.0520833);position:absolute;left:0;top:0;width:100%;height:0;z-index:10}
+.d-title{position:absolute;left:calc(var(--u)*20);top:calc(var(--u)*145);margin:0;font-weight:700;font-size:calc(var(--u)*68);line-height:calc(var(--u)*60);letter-spacing:-.03em;white-space:nowrap}
+.d-lead{position:absolute;left:calc(var(--u)*20);top:calc(var(--u)*292);font-size:calc(var(--u)*31.5);line-height:calc(var(--u)*45.3);white-space:nowrap}
+.d-block{position:absolute;left:calc(var(--u)*20)}
+.d-h{display:block;font-weight:700;font-size:calc(var(--u)*25);line-height:calc(var(--u)*30);letter-spacing:-.03em}
+.d-t{display:block;font-weight:500;font-size:calc(var(--u)*17);line-height:calc(var(--u)*25.8);letter-spacing:-.03em;white-space:nowrap}
+.d-img{position:absolute;display:block;background:var(--gray);object-fit:cover}
+.d-roll{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;display:block;opacity:0;z-index:0}
+.d-roll.prev{opacity:1;z-index:1}
+.d-roll.cur{opacity:1;z-index:2;transition:opacity .6s ease}
+.yes-btn{position:absolute;left:50%;top:calc(var(--vu)*.4167);transform:translateX(-50%);display:block;line-height:0}
+
+/* ---------- PAGE 6-9 ---------- */
+.p6-row{left:calc(var(--u)*228);width:calc(var(--u)*1525)}
+.p6-type{left:0;width:calc(var(--u)*610)}
+.p6-bl{left:calc(var(--u)*729)}
+.p6-img{left:calc(var(--u)*764);width:calc(var(--u)*728)}
+.p8-type{left:0;width:calc(var(--u)*767)}
+.p8-bl{left:calc(var(--u)*885)}
+.p8-img{left:calc(var(--u)*920);width:calc(var(--u)*572)}
+.open-row{left:calc(var(--u)*258);width:calc(var(--u)*1495)}
+.open-bl{left:0}
+.open-br{left:calc(var(--u)*1468)}
+.open-img{left:calc(var(--u)*35);width:calc(var(--u)*1425)}
+.open-text{font-size:calc(var(--u)*90.9);color:var(--pink)}
+
+
+/* ---------- PAGE 10 : gallery (1920 x 1080 reference, native asset sizes) ---------- */
+.gx{--w:calc(var(--vu)*.0520833);position:absolute;display:block}
+.gx img{position:absolute;display:block;pointer-events:none}
+.gx-obj{left:0;top:0;width:100%;height:100%}
+.gx-pk{visibility:hidden}
+.gx:hover .gx-obj{visibility:hidden}
+.gx:hover .gx-pk{visibility:visible}
+.gx .gx-num{pointer-events:auto}
+.gx1{left:calc(var(--w)*196);top:calc(var(--w)*215);width:calc(var(--w)*191);height:calc(var(--w)*722)}
+.gx1 .gx-num{left:calc(var(--w)*-48);top:calc(var(--w)*-17);width:calc(var(--w)*26);height:calc(var(--w)*39)}
+.gx2{left:calc(var(--w)*562);top:calc(var(--w)*291);width:calc(var(--w)*373);height:calc(var(--w)*262)}
+.gx2 .gx-num{left:calc(var(--w)*-55);top:calc(var(--w)*-12);width:calc(var(--w)*27);height:calc(var(--w)*39)}
+.gx3{left:calc(var(--w)*478);top:calc(var(--w)*623);width:calc(var(--w)*320);height:calc(var(--w)*236)}
+.gx3 .gx-num{left:calc(var(--w)*-13);top:calc(var(--w)*62);width:calc(var(--w)*29);height:calc(var(--w)*39)}
+.gx4{left:calc(var(--w)*1060);top:calc(var(--w)*196);width:calc(var(--w)*286);height:calc(var(--w)*394)}
+.gx4 .gx-num{left:calc(var(--w)*-23);top:calc(var(--w)*-7);width:calc(var(--w)*31);height:calc(var(--w)*39)}
+.gx5{left:calc(var(--w)*872);top:calc(var(--w)*665);width:calc(var(--w)*322);height:calc(var(--w)*299)}
+.gx5 .gx-num{left:calc(var(--w)*63);top:calc(var(--w)*-29);width:calc(var(--w)*30);height:calc(var(--w)*39)}
+.gx6{left:calc(var(--w)*1495);top:calc(var(--w)*388);width:calc(var(--w)*289);height:calc(var(--w)*264)}
+.gx6 .gx-num{left:calc(var(--w)*-50);top:calc(var(--w)*-22);width:calc(var(--w)*28);height:calc(var(--w)*39)}
+.gx7{left:calc(var(--w)*1324);top:calc(var(--w)*723);width:calc(var(--w)*290);height:calc(var(--w)*225)}
+.gx7 .gx-num{left:calc(var(--w)*6);top:calc(var(--w)*-16);width:calc(var(--w)*31);height:calc(var(--w)*39)}
+
+/* ---------- PAGE 11 ---------- */
+.f-text{font-size:calc(var(--u)*90.9);color:var(--ink)}
+.f-yes{left:calc(var(--u)*1257);width:calc(var(--u)*243);top:calc(var(--u)*10);height:calc(var(--u)*145)}
+.f-br{left:calc(var(--u)*1012)}
+.f-img{left:calc(var(--u)*35);width:calc(var(--u)*965)}
+</style>
+</helmet>
+
+<div class="site" style="--pink:{{pink}};--slot:{{slotLine}}">
+
+  <!-- ================= PAGE 1 — INTRO (1920 x 1080 reference) ================= -->
+  <sc-if value="{{isP1}}" hint-placeholder-val="{{ true }}">
+    <section class="screen fit" id="page-1" aria-label="Intro">
+      <button class="reset in-hit" onClick="{{goP2}}" aria-label="BRIEF">
+        <sc-for list="{{introObjects}}" as="obj" hint-placeholder-count="1">
+          <img class="in-obj" src="{{obj.src}}" alt="" style="visibility: {{obj.vis}}; top: calc(var(--vu)*-17.1354)" data-slot="bracket-image-{{obj.n}}">
+        </sc-for>
+        <img class="in-brief" src="./assets/4eaaeca78870f17f6a0ae49e2e6ceb44.png" alt="BRIEF">
+      </button>
+    </section>
+  </sc-if>
+
+  <!-- ================= PAGE 2 — INTRO NAME ================= -->
+  <sc-if value="{{isP2}}" hint-placeholder-val="{{ false }}">
+    <section class="screen fit" id="page-2" aria-label="Intro name">
+      <button class="reset in-hit" onClick="{{goMain}}" aria-label="BRIEF OO 디자이너 이예슬">
+        <img class="in-brief" src="./assets/4eaaeca78870f17f6a0ae49e2e6ceb44.png" alt="BRIEF">
+        <span class="ko slot-text p2-text in-name" style="left: calc(var(--vu)*24.7917); top: calc(var(--vu)*2.6389); position: absolute">어떤 디자이너 이예슬</span>
+      </button>
+    </section>
+  </sc-if>
+
+  <!-- ================= MAIN (PAGE 3, 4, 6–11) ================= -->
+  <!-- ================= PAGE 5 — PROJECT DETAIL ================= -->
+  <sc-if value="{{isDetail}}" hint-placeholder-val="{{ false }}">
+    <section class="screen fit detail hdr-static" id="page-5" aria-label="Project detail">
+      <div class="hdr-scope">
+        <button class="reset hdr-l" onClick="{{goHome}}" style="top: calc(var(--vu)*0.5778); left: calc(var(--vu)*0.8611)">BRIEF</button>
+        <span class="hdr-r" style="top: calc(var(--vu)*0.5778); left: calc(var(--vu)*94.3708)">2026</span>
+        <button class="reset yes-btn" onClick="{{backToMain}}" aria-label="YES — 메인으로"><img src="./assets/a443efe1249fa6dc7b0e238dda708de0.svg" alt="" style="width:calc(var(--w)*105)"></button>
+      </div>
+
+      <sc-if value="{{isD1}}" hint-placeholder-val="{{ true }}">
+      <h1 class="d-title">ASICS<br>BEYOND STATION</h1>
+      <p class="d-lead ko pink" style="margin: 0; font-size: calc(var(--vu)*1.5972); letter-spacing: -0.04em; font-weight: 600">
+        <span style="display:block">ASICS의 세 가지 제품 카테고리를 통합해 선보인 첫 브랜드 팝업 스토어</span>
+        <span style="display:block">BEYOND STATION의 시각 디자인을 담당했습니다. 서로 다른 특성을</span>
+        <span style="display:block">지닌 제품 라인을 하나의 브랜드 경험 안에서 자연스럽게 연결하기 위해,</span>
+        <span style="display:block">하나의 스토리를 기반으로 한 초현실적 세계관을 제안하고 이를 중심으로</span>
+        <span style="display:block">공간 전반의 비주얼을 전개했습니다. 이를 통해 각 라인이 독립적인</span>
+        <span style="display:block">아이덴티티를 유지하면서도 하나의 브랜드 서사 안에서 흥미롭고 임팩트</span>
+        <span style="display:block">있게 경험되도록 완성하였습니다.</span>
+      </p>
+      <div class="d-block" style="top:calc(var(--u)*638)">
+        <span class="d-h">Client</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*8)">(주)아식스코리아</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*730)">
+        <span class="d-h">Scope of Work</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">공간 컨셉 및 방향성 기획</span>
+        <span class="d-t">키비주얼 디자인</span>
+        <span class="d-t">공간 그래픽 및 베리에이션 디자인</span>
+        <span class="d-t">굿즈 기획 및 제작</span>
+        <span class="d-t">제작물 및 현장 설치 감리</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*928)">
+        <span class="d-h">Contribution</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">비주얼 전략 및 디자인 방향 설정 50%</span>
+        <span class="d-t">키비주얼 및 그래픽 디자인 100%</span>
+        <span class="d-t">제작 감리 및 현장 설치 30%</span>
+      </div>
+      <div class="d-right" style="width:calc(var(--u)*970.3)">
+      <img class="d-img" data-slot="detail-1-image-1" src="./assets/eb78991729592cd006708e965909899a.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*150);width:calc(var(--u)*970.3);height:calc(var(--u)*563)">
+      <img class="d-img" data-slot="detail-1-image-2" src="./assets/0963634a9f4291fcc80befe271589c77.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*728.1);width:calc(var(--u)*480.2);height:calc(var(--u)*378.7)">
+      <img class="d-img" data-slot="detail-1-image-3" src="./assets/014f31187f4b4b6fc1710df146fbb356.jpg" alt="" style="left:calc(var(--u)*493.2);top:calc(var(--u)*728.1);width:calc(var(--u)*477.1);height:calc(var(--u)*378.7)">
+
+      </div>      </sc-if>
+      <sc-if value="{{isD2}}" hint-placeholder-val="{{ false }}">
+      <h1 class="d-title">ASICS<br>GT-2160 FACTORY</h1>
+      <p class="d-lead ko pink" style="margin: 0; font-size: calc(var(--vu)*1.5972); letter-spacing: -0.04em; font-weight: 600">
+        <span style="display:block">ASICS GT-2160 출시를 기념한 팝업 스토어의 시각 디자인을</span>
+        <span style="display:block">담당했습니다. 2010년대 초반 GT-2000 시리즈를 복각한 신제품</span>
+        <span style="display:block">히스토리를 바탕으로, 과거 미래지향적이었던 기술적 디자인 감성을</span>
+        <span style="display:block">현재의 시점에서 재해석하는 ‘Retro Futurism’ 키워드를 도출했습니다.</span>
+        <span style="display:block">이처럼 차별화된 브랜드 무드를 통해 방문자가 제품의 특징을 컨셉 중심의</span>
+        <span style="display:block">공간 경험을 통해 감각적으로 인지할 수 있도록 연출했습니다.</span>
+      </p>
+      <div class="d-block" style="top:calc(var(--u)*594)">
+        <span class="d-h">Client</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*8)">(주)아식스코리아</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*686)">
+        <span class="d-h">Scope of Work</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">공간 컨셉 및 방향성 기획</span>
+        <span class="d-t">키비주얼 디자인</span>
+        <span class="d-t">공간 그래픽 및 베리에이션 디자인</span>
+        <span class="d-t">제작물 및 현장 설치 감리</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*863)">
+        <span class="d-h">Contribution</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">비주얼 전략 및 디자인 방향 설정 60%</span>
+        <span class="d-t">키비주얼 및 그래픽 디자인 100%</span>
+        <span class="d-t">제작 감리 및 현장 설치 40%</span>
+      </div>
+      <div class="d-right" style="width:calc(var(--u)*970.3)">
+      <img class="d-img" data-slot="detail-2-image-1" src="./assets/f3cc6f3ae5102fcbd0f57004cbacaf39.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*150);width:calc(var(--u)*970.3);height:calc(var(--u)*563)">
+      <img class="d-img" data-slot="detail-2-image-2" src="./assets/abeeebfa0c23d37b65955e293e0e7afa.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*729.7);width:calc(var(--u)*477.1);height:calc(var(--u)*377.1)">
+      <img class="d-img" data-slot="detail-2-image-3" src="./assets/6a5b8ada83d06fa5a6aa44f3335cdbab.jpg" alt="" style="left:calc(var(--u)*493.2);top:calc(var(--u)*729.7);width:calc(var(--u)*477.1);height:calc(var(--u)*377.1)">
+
+      </div>      </sc-if>
+      <sc-if value="{{isD3}}" hint-placeholder-val="{{ false }}">
+      <h1 class="d-title">OHOUSE HOME<br>TEAM DAY</h1>
+      <p class="d-lead ko pink" style="margin: 0; font-size: calc(var(--vu)*1.5972); font-weight: 600; letter-spacing: -0.04em">
+        <span style="display:block">오늘의집 창립 9주년을 맞아 임직원 600여 명이 모이는 'HOME TEAM</span>
+        <span style="display:block">DAY'의 브랜딩과 공간 연출을 담당했습니다. 오늘의집 BX팀이 구축한</span>
+        <span style="display:block">상위 브랜딩에 맞추어, 1회성 행사를 넘어 기업의 지속 가능한 조직 문화</span>
+        <span style="display:block">슬로건으로 자리 잡을 수 있도록 일관된 시각적 아이덴티티를</span>
+        <span style="display:block">구축했습니다. 이를 통해 임직원들이 하나의 원팀으로서 소속감을 느끼고,</span>
+        <span style="display:block">무한한 가능성을 향해 나아갈 수 있는 몰입감 높은 경험을 완성했습니다.</span>
+      </p>
+      <div class="d-block" style="top:calc(var(--u)*594)">
+        <span class="d-h">Client</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*8)">(주)버킷플레이스</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*686)">
+        <span class="d-h">Scope of Work</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">로고 디자인</span>
+        <span class="d-t">키비주얼 디자인</span>
+        <span class="d-t">공간 그래픽 및 베리에이션 디자인</span>
+        <span class="d-t">굿즈 기획 및 제작</span>
+        <span class="d-t">제작물 및 현장 설치 감리</span>
+      </div>
+      <div class="d-block" style="top:calc(var(--u)*880)">
+        <span class="d-h">Contribution</span>
+        <span class="d-t" style="margin-top:calc(var(--u)*7)">비주얼 전략 및 디자인 방향 설정 50%</span>
+        <span class="d-t">키비주얼 및 그래픽 디자인 70%</span>
+        <span class="d-t">제작 감리 및 현장 설치 50%</span>
+      </div>
+      <div class="d-right" style="width:calc(var(--u)*969.8)">
+      <img class="d-img" data-slot="detail-3-image-1" src="./assets/97c01ce77fd4126c442e27833d839cc8.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*150.5);width:calc(var(--u)*969.8);height:calc(var(--u)*562.5)">
+      <img class="d-img" data-slot="detail-3-image-2" src="./assets/4e6caadf6ebf2669cc127719936fbb7b.jpg" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*728.1);width:calc(var(--u)*480.2);height:calc(var(--u)*378.7)">
+      <img class="d-img" data-slot="detail-3-image-3" src="./assets/087664368bd722ef05410e23d9ae0506.jpg" alt="" style="left:calc(var(--u)*493.3);top:calc(var(--u)*728.1);width:calc(var(--u)*476.5);height:calc(var(--u)*378.7)">
+
+      </div>      </sc-if>
+      <sc-if value="{{isD4}}" hint-placeholder-val="{{ false }}">
+      <h1 class="d-title">ACROSS<br>EXPERIENCES</h1>
+      <p class="d-lead ko pink" style="margin: 0; font-weight: 600; font-size: calc(var(--vu)*1.5972); letter-spacing: -0.04em">
+        <span style="display:block">전시, 이벤트, 캠페인, 페스티벌, 팝업 등 다양한 프로젝트를</span>
+        <span style="display:block">경험하며 브랜딩부터 그래픽, 굿즈, 공간, 콘텐츠까지 폭넓은</span>
+        <span style="display:block">작업을 해왔습니다. 직접 디자인을 진행하는 것부터 팀을</span>
+        <span style="display:block">이끌고 프로젝트를 조율하는 일까지, 기획부터 제작과</span>
+        <span style="display:block">운영까지 함께 고민하며 결과물을 완성해왔습니다.</span>
+      </p>
+      <div class="d-block" style="top:calc(var(--u)*547)"><span class="d-h" style="font-size:calc(var(--u)*25);font-weight:500">2020-2025</span></div>
+      <div class="d-right" style="width:calc(var(--u)*1206.7)">
+      <div class="d-img" data-slot="project04-image-main" style="left:calc(var(--u)*0);top:calc(var(--u)*150.5);width:calc(var(--u)*1206.7);height:calc(var(--u)*648.5);background:transparent">
+        <sc-for list="{{d4Objects}}" as="obj" hint-placeholder-count="1">
+          <img class="d-roll {{obj.cls}}" src="{{obj.src}}" alt="" data-slot="project04-roll-{{obj.n}}">
+        </sc-for>
+      </div>
+      <img class="d-img" data-slot="project04-image-1" src="./assets/bd315749522827bc37e4fc79d3b1d646.png" alt="" style="left:calc(var(--u)*0);top:calc(var(--u)*811.5);width:calc(var(--u)*391.1);height:calc(var(--u)*295.3);object-fit:contain;background:transparent">
+      <img class="d-img" data-slot="project04-image-2" src="./assets/84131d0fc142730bfd254cb4ba92b21c.png" alt="" style="left:calc(var(--u)*407.8);top:calc(var(--u)*811.5);width:calc(var(--u)*391.1);height:calc(var(--u)*295.3);object-fit:contain;background:transparent">
+      <img class="d-img" data-slot="project04-image-3" src="./assets/f8f9924bdd46bec6d9a557471ebb25f0.png" alt="" style="left:calc(var(--u)*815.6);top:calc(var(--u)*811.5);width:calc(var(--u)*391.1);height:calc(var(--u)*295.3);object-fit:contain;background:transparent">
+
+      </div>      </sc-if>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{isMain}}" hint-placeholder-val="{{ false }}">
+<div class="main">
+
+      <div class="hdr-wrap">
+        <button class="reset hdr-l" onClick="{{goHome}}" style="top: calc(var(--vu)*0.5778); left: calc(var(--vu)*0.8611)">BRIEF</button>
+        <span class="hdr-r" style="top: calc(var(--vu)*0.5778); left: calc(var(--vu)*94.3708)">2026</span>
+        <img class="yes-sym" src="./assets/a443efe1249fa6dc7b0e238dda708de0.svg" alt="YES" style="width:{{yesW}}">
+      </div>
+
+      <!-- PAGE 3 — MAIN INTRO -->
+      
+
+      <!-- PAGE 4 — PROJECT LIST -->
+      <section class="intro" id="page-3" aria-label="Main intro">
+        <img class="intro-logo" src="./assets/649d804f4c5e566db5e1e76b761da933.png" alt="LEEYESEUL" style="left: calc(var(--vu)*1.0417); top: calc(var(--vu)*4.7222); position: absolute">
+        <div class="bio ko">
+          <sc-for list="{{bioLines}}" as="l" hint-placeholder-count="1">
+            <div class="{{l.cls}}"><span>{{l.a}}</span><span class="untyped">{{l.b}}</span></div>
+          </sc-for>
+        </div>
+      </section><section class="list" id="page-4" aria-label="Projects">
+        <button class="reset proj" onClick="{{openP1}}" data-project="asics-beyond-station">
+          <span class="proj-label">ASICS BEYOND STATION</span>
+          <span class="thumb" data-slot="thumb-asics-beyond-station"><img src="./assets/5029537d0bdabe461d730b20e6b22056.png" alt=""></span>
+        </button>
+        <button class="reset proj" onClick="{{openP2}}" data-project="asics-gt-2160-factory">
+          <span class="proj-label">ASICS GT-2160 FACTORY</span>
+          <span class="thumb" data-slot="thumb-asics-gt-2160-factory"><img src="./assets/af34826710de730128c0844fa69de674.png" alt=""></span>
+        </button>
+        <button class="reset proj" onClick="{{openP3}}" data-project="ohouse-home-team-day">
+          <span class="proj-label">OHOUSE HOME TEAM DAY</span>
+          <span class="thumb" data-slot="thumb-ohouse-home-team-day"><img src="./assets/f6f2dbea2c46675d0f37213c5b7490af.png" alt=""></span>
+        </button>
+        <button class="reset proj" onClick="{{openP4}}" data-project="additional-selected-works">
+          <span class="proj-label">Additional Selected Works</span>
+          <span class="thumb" data-slot="thumb-additional-selected-works"><img src="./assets/c841c6b9b169a6a7a743705d444ee912.png" alt=""></span>
+        </button>
+      </section>
+
+      <!-- PAGE 6 / 7 — HOW I WORK (one screen: closed -> bracket opens, text fades in) -->
+      <section class="screen" id="page-6" aria-label="How I work">
+        <button class="reset art-hit {{howCls}}" onClick="{{toggleHow}}" aria-expanded="{{howExp}}" aria-label="{{howLabel}}">
+          <sc-for list="{{howObjects}}" as="obj" hint-placeholder-count="1">
+            <img class="art-img art-roll-how art-roll {{obj.cls}}" src="{{obj.src}}" alt="" style="visibility:{{obj.vis}}" data-slot="roll-how-{{obj.n}}">
+          </sc-for>
+          <img class="art-img art-how art-lbl how-lbl" src="./assets/71fb5ba311afb33aeb3597b316542e56.png" alt="HOW I WORK">
+          <img class="art-img art-how art-lbr how-lbr" src="./assets/71fb5ba311afb33aeb3597b316542e56.png" alt="" data-slot="bracket-left-how">
+          <img class="art-img art-how how-rbr" src="./assets/71fb5ba311afb33aeb3597b316542e56.png" alt="" data-slot="bracket-right-how">
+          <span class="art-text art-text-o"><span class="ko slot-text open-text">{{howText}}</span></span>
+        </button>
+      </section>
+
+      <!-- PAGE 8 / 9 — WHO I BECOME (one screen, two states) -->
+      <section class="screen" id="page-8" aria-label="Who I become">
+        <button class="reset art-hit {{whoCls}}" onClick="{{toggleWho}}" aria-expanded="{{whoExp}}" aria-label="{{whoLabel}}">
+          <sc-for list="{{whoObjects}}" as="obj" hint-placeholder-count="1">
+            <img class="art-img art-roll-who art-roll {{obj.cls}}" src="{{obj.src}}" alt="" style="visibility:{{obj.vis}}" data-slot="roll-who-{{obj.n}}">
+          </sc-for>
+          <img class="art-img art-who art-lbl who-lbl" src="./assets/1cf8bf77eacbc91adbd8913e2537a879.png" alt="WHO I BECOME">
+          <img class="art-img art-who art-lbr who-lbr" src="./assets/1cf8bf77eacbc91adbd8913e2537a879.png" alt="" data-slot="bracket-left-who">
+          <img class="art-img art-who who-rbr" src="./assets/1cf8bf77eacbc91adbd8913e2537a879.png" alt="" data-slot="bracket-right-who">
+          <span class="art-text art-text-o"><span class="ko slot-text open-text">{{whoText}}</span></span>
+        </button>
+      </section>
+
+      <!-- PAGE 10 — IMAGE GALLERY -->
+      <section class="screen" id="page-10" aria-label="Gallery">
+        <div class="gx gx1" data-slot="gallery-1">
+          <img class="gx-obj" src="./assets/7d512295318946f3286283f1b8733775.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/bdb122f2412872791bca527c529b2b0f.png" alt="">
+          <img class="gx-num" src="./assets/b46cea737102ff86023c72850359d774.png" alt="(1)">
+        </div>
+        <div class="gx gx2" data-slot="gallery-2">
+          <img class="gx-obj" src="./assets/e2bc288d9fd865fde507c0e29b419588.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/ae5a3d092789b7b5b190ad99b52912ed.png" alt="">
+          <img class="gx-num" src="./assets/ada33df1df9b6e536e64e79d5d41cfb0.png" alt="(2)">
+        </div>
+        <div class="gx gx3" data-slot="gallery-3">
+          <img class="gx-obj" src="./assets/4ab6f5ab61c10609a9fa8fb9d794aed5.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/e0e85d46d0661691a95413380cf799ee.png" alt="">
+          <img class="gx-num" src="./assets/245128d033fdf1624246348c40147610.png" alt="(3)">
+        </div>
+        <div class="gx gx4" data-slot="gallery-4">
+          <img class="gx-obj" src="./assets/ed9786c499caf4422fab618d65ccc66b.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/76e674a5a53c7c1fa535707e0e6b9ab1.png" alt="">
+          <img class="gx-num" src="./assets/5aca297a0c3fd2dd874933d53ee9b191.png" alt="(4)">
+        </div>
+        <div class="gx gx5" data-slot="gallery-5">
+          <img class="gx-obj" src="./assets/d61ed24a922748e2da19ffb4cff489b5.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/50aee71578e210675e3f2666a9b819ce.png" alt="">
+          <img class="gx-num" src="./assets/495dba4ddcc5c4a6d5b165136600eaf5.png" alt="(5)">
+        </div>
+        <div class="gx gx6" data-slot="gallery-6">
+          <img class="gx-obj" src="./assets/1d9f62c5ab5e77bd1c28c0f69cfb34cc.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/4d098879e5a98d5220037725e96a9ded.png" alt="">
+          <img class="gx-num" src="./assets/eba51ae00e0f583be08f5f8b94eddf23.png" alt="(6)">
+        </div>
+        <div class="gx gx7" data-slot="gallery-7">
+          <img class="gx-obj" src="./assets/6a14f9e55428fff70a39b340fad94fec.png" alt="">
+          <img class="gx-obj gx-pk" src="./assets/dad9707ba119e65dbdca938d9b73e867.png" alt="">
+          <img class="gx-num" src="./assets/1c74eecfda8d6b7362c443b05d51b90f.png" alt="(7)">
+        </div>
+      </section>
+
+      <!-- PAGE 11 — FINAL INTERACTION -->
+      <section class="screen screen-pink" id="page-11" aria-label="Final">
+        <button class="reset art-hit art-hit-f {{finCls}}" onClick="{{nextPhrase}}" aria-label="YES!">
+          <img class="art-img art-fin fin-lb" src="./assets/cdffea447171c215c753ead3a525563b.png" alt="" data-slot="final-bracket-left">
+          <img class="art-img art-fin fin-rb" src="./assets/cdffea447171c215c753ead3a525563b.png" alt="" data-slot="final-bracket-right">
+          <img class="art-img art-fin fin-yes" src="./assets/cdffea447171c215c753ead3a525563b.png" alt="" data-slot="final-yes">
+          <span class="art-text art-text-f"><span class="ko slot-text f-text">{{closedText}}</span></span>
+          <span class="art-text art-text-fo">
+            <sc-for list="{{finPhrases}}" as="ph" hint-placeholder-count="1">
+              <span class="ko slot-text f-text fph {{ph.cls}}">{{ph.text}}</span>
+            </sc-for>
+          </span>
+        </button>
+      </section>
+
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props='{"pink":{"editor":"color","default":"#FD85E6"},"showSlots":{"editor":"boolean","default":true}}'>
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    // stage: p1 -> p2 -> main (pages 3, 4, 6/7, 8/9, 10, 11 as one scroll) -> detail (page 5)
+    this.state = { stage: 'p1', phraseIndex: 0, howStep: 0, whoStep: 0, introIdx: 0, yesN: 52.5, howIdx: 0, whoIdx: 0, project: 1, d4Idx: 0, typeN: 99999 };
+    // final-page phrases: only the PDF default for now; add more here for the click-to-change step
+    this.finPhrases = ['어떤 디자이너 이예슬', '경계 없는 디자이너 이예슬', '잘 부탁드립니다 !'];
+    this._y = 0;
+    // intro object images 1-9, all stacked in the same slot (955 x 806)
+    this.howSrc = ['./assets/8e8e02d07c1aca7e5f141bcf2aba99b4.png', './assets/cf4057598f82270bf89e5c8a49a78018.png', './assets/135c87ea59abae0048bb5aaeb0e33225.png', './assets/7a6b86f28ccb9e86fe61b096c4ca9ed0.png', './assets/b4ceec0e55adca2f35ecb4828b5cc1d9.png'];
+    this.whoSrc = ['./assets/a6d5ef108ea8bf6bcc7734b0e635e4b4.png', './assets/d7f9570e4dc53d2ac3e512e17825de65.png', './assets/d1e6f9157ac37ba873d56e7de04171ec.png', './assets/0312aca728795ad09c2819d16f691ccc.png', './assets/ff7c087122cbf2040a2571359e0289fb.png'];
+    this.bioLines = ["저는 좋은 경험을 만들기 위해 고민하고, 함께 답을 찾아가는", "디자이너 이예슬입니다. 새로운 것을 알아가고 경험하는 일을", "좋아하고, 혼자보다 함께 만들어가는 과정에서 더 큰 즐거움을", "느낍니다. 생각에만 머무르기보다 직접 시도하고 결과물로", "만들어보는 편입니다."];
+    this.bioTotal = this.bioLines.reduce((n, l) => n + Array.from(l).length, 0);
+    this.d4Src = ['./assets/201f39e43e44253f10ee8dab8ec47c41.png', './assets/d95e990ce3de4e67702538f72039f3d7.png', './assets/e136a2ad4b0a8ab85adc4c50863ae5e0.png', './assets/b2f68d8b8572545c09e3dbe5cd3d11f6.png', './assets/d18a6bb570c9dd597f454f089b5fb6bf.png'];
+    this.introSrc = ['./assets/4be69f93482cde9f49ddea89527e832f.png', './assets/5dd66ec51bb69a316bc52e7753a34eb7.png', './assets/21b2fb29e1735c6bac1e34fb4c0e3568.png', './assets/da3c969503ee1f2ca707023864db4701.png', './assets/6f11a1e3553edfe9d2cc6db47c0b6aab.png', './assets/4e90c82133b1c5ea1cc009e4e3761bf1.png', './assets/d0ba190d6719355ed11653694f686379.png', './assets/578f5111086f48269b385feefe1605ba.png', './assets/a9e8a12e878adb7b261e6e773cc51729.png'];
+  }
+
+  componentDidMount() {
+    this.startRoll();
+    // YES symbol: width follows the scroll position continuously
+    // 52.5 (page top) -> 105 (the moment the project thumbnails are about to reach the symbol); scrolling back shrinks it again
+    this._onScroll = () => {
+      if (this.state.stage !== 'main') return;
+      const main = document.querySelector('.main');
+      const list = document.getElementById('page-4');
+      if (!main || !list) return;
+      const site = document.querySelector('.site');
+      const vw = (site && site.clientWidth ? site.clientWidth : window.innerWidth) / 100;
+      const mainTop = main.getBoundingClientRect().top;
+      const y = Math.max(0, -mainTop);
+      const listOff = list.getBoundingClientRect().top - mainTop;
+      const symBottom = .0520833 * vw * (8 + 105 * 114.15 / 104.96);
+      const end = Math.max(1, listOff - symBottom);
+      const n = Math.round((52.5 + 52.5 * Math.min(1, y / end)) * 100) / 100;
+      if (n !== this.state.yesN) this.setState({ yesN: n });
+    };
+    try { window.addEventListener('scroll', this._onScroll, { passive: true, capture: true }); window.addEventListener('resize', this._onScroll); } catch (e) {}
+    // base unit = 1/100 of the real content width (excludes the scrollbar), so nothing overflows sideways in Chrome
+    this._fit = () => {
+      const site = document.querySelector('.site');
+      const w = site ? site.clientWidth : 0;
+      if (w > 0) { try { document.documentElement.style.setProperty('--vuw', (w / 100) + 'px'); } catch (e) {} }
+    };
+    this._fit();
+    try { window.addEventListener('resize', this._fit); } catch (e) {}
+    try { this._ro = new ResizeObserver(this._fit); const site = document.querySelector('.site'); if (site) this._ro.observe(site); } catch (e) {}
+    this._onPop = () => {
+      if (this.state.stage === 'detail') this.showMain(this._y);
+    };
+    try { window.addEventListener('popstate', this._onPop); } catch (e) {}
+  }
+
+  componentWillUnmount() {
+    this.stopRoll();
+    this.stopPageRoll();
+    this.stopD4Roll();
+    this.stopType();
+    try { window.removeEventListener('scroll', this._onScroll, true); window.removeEventListener('resize', this._onScroll); window.removeEventListener('resize', this._fit); if (this._ro) this._ro.disconnect(); } catch (e) {}
+    try { window.removeEventListener('popstate', this._onPop); } catch (e) {}
+  }
+
+  // intro image rolling: runs only on the first intro screen, one image per second
+  startRoll() {
+    this.stopRoll();
+    this._timer = setInterval(() => {
+      this.setState({ introIdx: (this.state.introIdx + 1) % this.introSrc.length });
+    }, 700);
+  }
+
+  // HOW I WORK / WHO I BECOME rolling: two independent timers, 0.7s, only while the main page is shown
+  startPageRoll() {
+    this.stopPageRoll();
+    this._howTimer = setInterval(() => this.setState({ howIdx: (this.state.howIdx + 1) % this.howSrc.length }), 700);
+    this._whoTimer = setInterval(() => this.setState({ whoIdx: (this.state.whoIdx + 1) % this.whoSrc.length }), 700);
+  }
+
+  stopPageRoll() {
+    if (this._howTimer) { clearInterval(this._howTimer); this._howTimer = null; }
+    if (this._whoTimer) { clearInterval(this._whoTimer); this._whoTimer = null; }
+  }
+
+  // project-04 large image: 5 images, 3s each, source swap only; runs only while project 04 is shown
+  startD4Roll() {
+    this.stopD4Roll();
+    this._d4Timer = setInterval(() => this.setState({ d4Idx: (this.state.d4Idx + 1) % this.d4Src.length }), 3000);
+  }
+
+  // main intro sentence: types in one character at a time (60ms); the full text is always laid out, untyped characters are only hidden
+  startType() {
+    this.stopType();
+    this.setState({ typeN: 0 });
+    this._typeTimer = setInterval(() => {
+      const n = this.state.typeN + 1;
+      this.setState({ typeN: n });
+      if (n >= this.bioTotal) this.stopType();
+    }, 60);
+  }
+
+  stopType() {
+    if (this._typeTimer) { clearInterval(this._typeTimer); this._typeTimer = null; }
+  }
+
+  stopD4Roll() {
+    if (this._d4Timer) { clearInterval(this._d4Timer); this._d4Timer = null; }
+  }
+
+  stopRoll() {
+    if (this._timer) { clearInterval(this._timer); this._timer = null; }
+  }
+
+  goIntro() {
+    this.stopType();
+    this.setState({ phraseIndex: 0 });
+    this.stopPageRoll();
+    this.stopD4Roll();
+    this.setState({ stage: 'p1', introIdx: 0 });
+    this.scrollTo(0);
+    this.startRoll();
+  }
+
+  scrollTo(y) {
+    setTimeout(() => { try { window.scrollTo(0, y); } catch (e) {} if (this._onScroll) this._onScroll(); }, 0);
+    setTimeout(() => { if (this._onScroll) this._onScroll(); }, 80);
+  }
+
+  openProject(n) {
+    try { this._y = window.scrollY || 0; } catch (e) { this._y = 0; }
+    try { window.history.pushState({ page: 'detail' }, ''); } catch (e) {}
+    this.stopPageRoll();
+    this.stopD4Roll();
+    this.setState({ stage: 'detail', project: n, d4Idx: 0 });
+    if (n === 4) this.startD4Roll();
+    this.scrollTo(0);
+  }
+
+  showMain(y) {
+    this.stopD4Roll();
+    this.setState({ stage: 'main', yesN: 52.5, howIdx: 0, whoIdx: 0 });
+    this.startPageRoll();
+    this.scrollTo(y || 0);
+  }
+
+  howTextFor(step) { return step === 2 ? '함께 일하는 방식을 고민하는 디자이너' : '브랜드에 맞는 답을 찾아가는 디자이너'; }
+  whoTextFor(step) { return step === 2 ? '함께 성장하는 디자이너' : '브랜드 경험을 확장하는 디자이너'; }
+
+  renderVals() {
+    const s = this.state.stage;
+    return {
+      pink: this.props.pink ?? '#FD85E6',
+      slotLine: (this.props.showSlots ?? true) ? '#c4c4c4' : 'transparent',
+      introObjects: this.introSrc.map((src, i) => ({ src, n: i + 1, vis: i === this.state.introIdx ? 'visible' : 'hidden' })),
+      howObjects: this.howSrc.map((src, i) => ({ src, n: i + 1, cls: '', vis: i === this.state.howIdx ? 'visible' : 'hidden' })),
+      whoObjects: this.whoSrc.map((src, i) => ({ src, n: i + 1, cls: i === 0 ? 'art-roll-who5' : '', vis: i === this.state.whoIdx ? 'visible' : 'hidden' })),
+      yesW: 'calc(var(--vu)*.0520833*' + this.state.yesN + ')',
+      bioLines: (() => {
+        let left = this.state.typeN;
+        return this.bioLines.map((line, i) => {
+          const ch = Array.from(line); const k = Math.max(0, Math.min(ch.length, left)); left -= k;
+          return { a: ch.slice(0, k).join(''), b: ch.slice(k).join(''), cls: i === this.bioLines.length - 1 ? 'last' : '' };
+        });
+      })(),
+      isP1: s === 'p1',
+      isP2: s === 'p2',
+      isMain: s === 'main',
+      isDetail: s === 'detail',
+      isD1: this.state.project === 1,
+      isD2: this.state.project === 2,
+      isD3: this.state.project === 3,
+      isD4: this.state.project === 4,
+      d4Objects: this.d4Src.map((src, i) => ({ src, n: i + 1, cls: i === this.state.d4Idx ? 'cur' : (i === (this.state.d4Idx + this.d4Src.length - 1) % this.d4Src.length ? 'prev' : '') })),
+      openP1: () => this.openProject(1),
+      openP2: () => this.openProject(2),
+      openP3: () => this.openProject(3),
+      openP4: () => this.openProject(4),
+      backToMain: () => this.showMain(this._y),
+      howCls: this.state.howStep > 0 ? 'is-open' : '',
+      whoCls: this.state.whoStep > 0 ? 'is-open' : '',
+      howExp: this.state.howStep > 0 ? 'true' : 'false',
+      whoExp: this.state.whoStep > 0 ? 'true' : 'false',
+      howLabel: this.state.howStep > 0 ? this.howTextFor(this.state.howStep) : 'HOW I WORK',
+      whoLabel: this.state.whoStep > 0 ? this.whoTextFor(this.state.whoStep) : 'WHO I BECOME',
+      howOpen: this.state.howStep > 0,
+      howClosed: this.state.howStep === 0,
+      whoOpen: this.state.whoStep > 0,
+      whoClosed: this.state.whoStep === 0,
+      howText: this.howTextFor(this.state.howStep),
+      whoText: this.whoTextFor(this.state.whoStep),
+      toggleHow: () => this.setState({ howStep: (this.state.howStep + 1) % 3 }),
+      toggleWho: () => this.setState({ whoStep: (this.state.whoStep + 1) % 3 }),
+      // phraseIndex: 0 = ( ), 1 = 새로운 경험, 2 = 함께하는 일 (all with yes !), 3..5 = bracket open + final greeting phrases; stops at 5
+      nextPhrase: () => { if (this.state.phraseIndex < 5) this.setState({ phraseIndex: this.state.phraseIndex + 1 }); },
+      closedText: ['', '새로운 경험', '함께하는 일'][Math.min(this.state.phraseIndex, 2)],
+      finCls: (this.state.phraseIndex >= 3 ? 'f-open' : '') + (this.state.phraseIndex >= 5 ? ' f-done' : ''),
+      finPhrases: this.finPhrases.map((text, i) => ({ text, cls: (i + 3 === this.state.phraseIndex ? 'on' : '') + (i >= 1 ? ' f-white' : '') })),
+      goP2: () => { this.stopRoll(); this.stopPageRoll(); this.setState({ stage: 'p2' }); },
+      goMain: () => { this.showMain(0); this.startType(); },
+      goHome: () => this.goIntro(),
+      openStation: () => this.openProject(1),
+      noop: () => {}
+    };
+  }
+}
+</script>
+</body>
+</html>
